@@ -27,5 +27,5 @@ A Node.js and Express backend service that automatically scrapes real-time lotte
 
 1. **Clone the repository:**
    ```bash
-   git clone [https://github.com/your-username/lottery-app.git](https://github.com/your-username/lottery-app.git)
-   cd lottery-app
+   git clone [https://github.com/produm-debug/4d-results-api.git](https://github.com/produm-debug/4d-results-api.git)
+   cd 4d-results-api
