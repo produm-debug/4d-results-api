@@ -39,17 +39,21 @@ Before running this project, ensure you have:
    cd 4d-results-api
 
 2. **Install Dependencies:**
+    ```bash
     npm install
 
 3. **Configure Environment Variables:**
+    ```bash
     Create a .env file in the root directory:
     touch .env
 
 4. **Add environment configuration to .env:**
+    ```bash
     MONGODB_URI=mongodb+srv://<username>:<password>@<cluster-url>/<database-name>?retryWrites=true&w=majority
     PORT=5000
 
 5. **Run the Application:**
+    ```bash
     node server.js
 
 ---
