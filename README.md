@@ -23,9 +23,36 @@ A Node.js and Express backend service that automatically scrapes real-time lotte
 
 ---
 
+## 📋 Prerequisites
+
+Before running this project, ensure you have:
+* **Node.js** (v18 or higher)
+* **MongoDB** (A local MongoDB instance or a [MongoDB Atlas](https://www.mongodb.com/cloud/atlas) cluster)
+
+---
+
 ## ⚙️ Installation & Setup
 
 1. **Clone the repository:**
    ```bash
    git clone [https://github.com/produm-debug/4d-results-api.git](https://github.com/produm-debug/4d-results-api.git)
    cd 4d-results-api
+
+2. **Install Dependencies:**
+    npm install
+
+3. **Configure Environment Variables:**
+    Create a .env file in the root directory:
+    touch .env
+
+4. **Add environment configuration to .env:**
+    MONGODB_URI=mongodb+srv://<username>:<password>@cluster0.xxx.mongodb.net/lottery?retryWrites=true&w=majority
+    PORT=5000
+
+5. **Run the Application:**
+    node server.js
+
+---
+
+
+    
