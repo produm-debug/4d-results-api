@@ -43,8 +43,8 @@ Before running this project, ensure you have:
     npm install
 
 3. **Configure Environment Variables:**
-    ```bash
     Create a .env file in the root directory:
+    ```bash
     touch .env
 
 4. **Add environment configuration to .env:**
