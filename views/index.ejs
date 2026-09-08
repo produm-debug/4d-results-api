@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Magnum 4D Single Result</title>
+</head>
+<body>
+
+  <!-- MANUAL UPDATE BUTTON -->
+  <div style="margin-bottom: 20px;">
+    <button id="updateBtn" onclick="manualUpdate()">🔄 Fetch & Update Numbers</button>
+    <span id="status"></span>
+  </div>
+
+  <!-- DISPLAY DATABASE RESULT -->
+  <% if (result) { %>
+    <h2>Draw Date: <%= result.drawDate %> (<%= result.drawId %>)</h2>
+    <p>1st Prize: <strong><%= result.topPrizes.first %></strong></p>
+    <p>2nd Prize: <strong><%= result.topPrizes.second %></strong></p>
+    <p>3rd Prize: <strong><%= result.topPrizes.third %></strong></p>
+    
+    <p>Last updated in DB: <%= new Date(result.updatedAt).toLocaleTimeString() %></p>
+  <% } else { %>
+    <p>No data in DB yet. Click the button above to fetch it!</p>
+  <% } %>
+
+  <script>
+  async function manualUpdate() {
+    const btn = document.getElementById('updateBtn');
+    const status = document.getElementById('status');
+
+    btn.disabled = true;
+    status.innerText = " Pulling latest data from Magnum...";
+
+    try {
+      const res = await fetch('/api/sync-draw', { method: 'POST' });
+      const data = await res.json();
+
+      if (data.success) {
+        status.innerText = " Updated! Reloading...";
+        window.location.reload(); // Reloads page to show updated numbers
+      } else {
+        alert("Sync failed: " + data.error);
+        btn.disabled = false;
+      }
+    } catch (err) {
+      alert("Error connecting to server.");
+      btn.disabled = false;
+    }
+  }
+  </script>
+</body>
+</html>
