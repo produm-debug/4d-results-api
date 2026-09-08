@@ -46,7 +46,7 @@ Before running this project, ensure you have:
     touch .env
 
 4. **Add environment configuration to .env:**
-    MONGODB_URI=mongodb+srv://<username>:<password>@cluster0.xxx.mongodb.net/lottery?retryWrites=true&w=majority
+    MONGODB_URI=mongodb+srv://<username>:<password>@<cluster-url>/<database-name>?retryWrites=true&w=majority
     PORT=5000
 
 5. **Run the Application:**
